@@ -226,7 +226,7 @@ namespace SolarWinds.Logging
                             {
                                 if (!_configurations.Contains(fi.FullName))
                                 {
-                                    log4net.Config.XmlConfigurator.ConfigureAndWatch(fi);
+                                    log4net.Config.XmlConfigurator.ConfigureAndWatch(null, fi);
                                     _configurations.Add(fi.FullName);
                                 }
                             }

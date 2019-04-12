@@ -3,14 +3,13 @@ using System.Diagnostics;
 using System.IO;
 using System.IO.Compression;
 using System.ServiceModel.Channels;
-using SolarWinds.Logging;
 
 namespace SolarWinds.InformationService.Contract2.Bindings
 {
     //This class is used to create the custom encoder (GZipMessageEncoder)
     internal class GZipMessageEncoderFactory : MessageEncoderFactory
     {
-        private static readonly Log _log = new Log();
+        //TODO:private static readonly Log _log = new Log();
 
         readonly MessageEncoder encoder;
 
