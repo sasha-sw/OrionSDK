@@ -2,7 +2,7 @@
   <PropertyGroup>
     <ProductVersion>9.0.30729</ProductVersion>
     <RootNamespace>SolarWinds.InformationService.Contract2</RootNamespace>
-    <TargetFramework>netcoreapp3</TargetFramework>
+    <TargetFramework>netcoreapp2.2</TargetFramework>
     <FileUpgradeFlags />
     <OldToolsVersion>3.5</OldToolsVersion>
     <UpgradeBackupLocation />
