@@ -13,7 +13,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SwisPowerShell.Tests", "..\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SolarWinds.Logging", "Logging\SolarWinds.Logging.csproj", "{7B3279F9-8A8C-47FD-83EA-15390AEA5F87}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Playground", "Playground\Playground.csproj", "{C160D5FD-CBE0-4452-A6DD-7D0BFA271B46}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Playground", "Playground\Playground.csproj", "{C160D5FD-CBE0-4452-A6DD-7D0BFA271B46}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SwqlStudio", "SwqlStudio\SwqlStudio.csproj", "{A8B166E3-6ED3-455B-9283-033FE862C4DA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -91,6 +93,18 @@ Global
 		{C160D5FD-CBE0-4452-A6DD-7D0BFA271B46}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{C160D5FD-CBE0-4452-A6DD-7D0BFA271B46}.Release|x86.ActiveCfg = Release|Any CPU
 		{C160D5FD-CBE0-4452-A6DD-7D0BFA271B46}.Release|x86.Build.0 = Release|Any CPU
+		{A8B166E3-6ED3-455B-9283-033FE862C4DA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A8B166E3-6ED3-455B-9283-033FE862C4DA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A8B166E3-6ED3-455B-9283-033FE862C4DA}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{A8B166E3-6ED3-455B-9283-033FE862C4DA}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{A8B166E3-6ED3-455B-9283-033FE862C4DA}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{A8B166E3-6ED3-455B-9283-033FE862C4DA}.Debug|x86.Build.0 = Debug|Any CPU
+		{A8B166E3-6ED3-455B-9283-033FE862C4DA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A8B166E3-6ED3-455B-9283-033FE862C4DA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A8B166E3-6ED3-455B-9283-033FE862C4DA}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{A8B166E3-6ED3-455B-9283-033FE862C4DA}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{A8B166E3-6ED3-455B-9283-033FE862C4DA}.Release|x86.ActiveCfg = Release|Any CPU
+		{A8B166E3-6ED3-455B-9283-033FE862C4DA}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

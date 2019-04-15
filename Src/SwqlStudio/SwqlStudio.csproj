@@ -1,0 +1,282 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net472</TargetFramework>
+    <ApplicationIcon>Main.ico</ApplicationIcon>
+    <FileUpgradeFlags />
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <OutputPath>..\..\bin\$(Configuration)\</OutputPath>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.CSharp" Version="4.*" />
+    <PackageReference Include="System.Data.DataSetExtensions" Version="4.*" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="DockPanelSuite" Version="3.0.4" />
+    <PackageReference Include="DockPanelSuite.ThemeVS2015" Version="3.0.4" />
+    <PackageReference Include="jacobslusser.ScintillaNET" Version="3.5.6" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\CommonAssemblyInfo.cs" Link="Properties\CommonAssemblyInfo.cs" />
+    <Compile Update="3rdParty\ScintillaNET-FindReplaceDialog\FindAllResults\FindAllResultsPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="3rdParty\ScintillaNET-FindReplaceDialog\FindAllResults\FindAllResultsPanel.Designer.cs">
+      <DependentUpon>FindAllResultsPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Update="3rdParty\ScintillaNET-FindReplaceDialog\FindReplace\FindReplace.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="3rdParty\ScintillaNET-FindReplaceDialog\FindReplace\FindReplaceDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="3rdParty\ScintillaNET-FindReplaceDialog\FindReplace\FindReplaceDialog.Designer.cs">
+      <DependentUpon>FindReplaceDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Update="3rdParty\ScintillaNET-FindReplaceDialog\FindReplace\IncrementalSearcher.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="3rdParty\ScintillaNET-FindReplaceDialog\FindReplace\IncrementalSearcher.Designer.cs">
+      <DependentUpon>IncrementalSearcher.cs</DependentUpon>
+    </Compile>
+    <Compile Update="3rdParty\ScintillaNET-FindReplaceDialog\FindReplace\ToolStripIncrementalSearcher.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="3rdParty\ScintillaNET-FindReplaceDialog\GoTo\GoToDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="3rdParty\ScintillaNET-FindReplaceDialog\GoTo\GoToDialog.Designer.cs">
+      <DependentUpon>GoToDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Update="3rdParty\ScintillaNET-FindReplaceDialog\Properties\Resources1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Update="About.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="About.Designer.cs">
+      <DependentUpon>About.cs</DependentUpon>
+    </Compile>
+    <Compile Update="ActivityMonitorTab.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="ActivityMonitorTab.Designer.cs">
+      <DependentUpon>ActivityMonitorTab.cs</DependentUpon>
+    </Compile>
+    <Compile Update="Controls\TabControlEx.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="CrudTab.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="CrudTab.Designer.cs">
+      <DependentUpon>CrudTab.cs</DependentUpon>
+    </Compile>
+    <Compile Update="EntityClassGraphForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="EntityClassGraphForm.designer.cs">
+      <DependentUpon>EntityClassGraphForm.cs</DependentUpon>
+    </Compile>
+    <Compile Update="InvokeVerbTab.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="InvokeVerbTab.Designer.cs">
+      <DependentUpon>InvokeVerbTab.cs</DependentUpon>
+    </Compile>
+    <Compile Update="ObjectExplorer\SearchTextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Update="QueriesDockPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="QueriesDockPanel.Designer.cs">
+      <DependentUpon>QueriesDockPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Update="MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Update="NewConnection.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="NewConnection.Designer.cs">
+      <DependentUpon>NewConnection.cs</DependentUpon>
+    </Compile>
+    <Compile Update="ObjectExplorer\ObjectExplorer.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="SubscriptionTab.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="SubscriptionTab.Designer.cs">
+      <DependentUpon>SubscriptionTab.cs</DependentUpon>
+    </Compile>
+    <Compile Update="TabTemplate.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="XmlRender\XmlBrowser.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="XmlRender\XmlBrowser.Designer.cs">
+      <DependentUpon>XmlBrowser.cs</DependentUpon>
+    </Compile>
+    <Compile Update="XmlRender\XmlRender.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>XmlRender.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Update="3rdParty\ScintillaNET-FindReplaceDialog\FindAllResults\FindAllResultsPanel.resx">
+      <DependentUpon>FindAllResultsPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Update="3rdParty\ScintillaNET-FindReplaceDialog\FindReplace\FindReplaceDialog.resx">
+      <DependentUpon>FindReplaceDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Update="3rdParty\ScintillaNET-FindReplaceDialog\FindReplace\IncrementalSearcher.resx">
+      <DependentUpon>IncrementalSearcher.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Update="3rdParty\ScintillaNET-FindReplaceDialog\GoTo\GoToDialog.resx">
+      <DependentUpon>GoToDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Update="3rdParty\ScintillaNET-FindReplaceDialog\Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources1.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ScintillaNET_FindReplaceDialog.Properties</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Update="About.resx">
+      <DependentUpon>About.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Update="ActivityMonitorTab.resx">
+      <DependentUpon>ActivityMonitorTab.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Update="CrudTab.resx">
+      <DependentUpon>CrudTab.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Update="EntityClassGraphForm.resx">
+      <DependentUpon>EntityClassGraphForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Update="InvokeVerbTab.resx">
+      <DependentUpon>InvokeVerbTab.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Update="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Update="QueryParameters.resx">
+      <DependentUpon>QueryParameters.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Update="QueryTab.resx">
+      <DependentUpon>QueryTab.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Update="SubscriptionTab.resx">
+      <DependentUpon>SubscriptionTab.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Update="XmlRender\XmlBrowser.resx">
+      <DependentUpon>XmlBrowser.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\DataSources\CrudProperty.datasource" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Update="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Update="QueryParameters.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="QueryParameters.Designer.cs">
+      <DependentUpon>QueryParameters.cs</DependentUpon>
+    </Compile>
+    <Compile Update="QueryStatusBar.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="QueryTab.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="QueryTab.Designer.cs">
+      <DependentUpon>QueryTab.cs</DependentUpon>
+    </Compile>
+    <Compile Update="SciTextEditorControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Update="NewConnection.resx">
+      <DependentUpon>NewConnection.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="3rdParty\ScintillaNET-FindReplaceDialog\Resources\Clock.ico" />
+    <Content Include="3rdParty\ScintillaNET-FindReplaceDialog\Resources\Clock.png" />
+    <Content Include="3rdParty\ScintillaNET-FindReplaceDialog\Resources\DeleteHS.png" />
+    <Content Include="3rdParty\ScintillaNET-FindReplaceDialog\Resources\GoToNextMessage.png" />
+    <Content Include="3rdParty\ScintillaNET-FindReplaceDialog\Resources\GoToPreviousMessage.png" />
+    <Content Include="3rdParty\ScintillaNET-FindReplaceDialog\Resources\LineColorHS.png" />
+    <Content Include="ResizableTextAreaStyle.css" />
+    <Content Include="Main.ico" />
+    <None Include="Resources\Refresh_16x.png" />
+    <None Include="Resources\TextFile_16x.ico" />
+    <None Include="Resources\Run_16x.png" />
+    <None Include="Resources\OpenFolder_16x.png" />
+    <None Include="Resources\Save_16x.png" />
+    <None Include="Resources\CloseDocument_16x.png" />
+    <None Include="Resources\NewFile_16x.png" />
+    <None Include="Resources\Redo_16x.png" />
+    <None Include="Resources\Undo_16x.png" />
+    <None Include="Resources\ConnectFilled_16x.png" />
+    <None Include="Resources\Disconnect_16x.png" />
+    <None Include="Resources\Cut_16x.png" />
+    <None Include="Resources\ASX_Copy_blue_16x.png" />
+    <None Include="Resources\ASX_Paste_blue_16x.png" />
+    <EmbeddedResource Include="XmlRender\XMLToHTML.xsl" />
+    <EmbeddedResource Include="XmlRender\XmlToHtml10.xslt" />
+    <EmbeddedResource Include="XmlRender\XmlToHtml10Basic.xslt" />
+    <EmbeddedResource Include="XmlRender\XmlToHtml10Cdata.xslt" />
+    <EmbeddedResource Include="XmlRender\XmlToHtml10Plus.xslt" />
+    <EmbeddedResource Include="XmlRender\XSLTHtml20.xslt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Contract\SolarWinds.InformationService.Contract.csproj" />
+    <ProjectReference Include="..\Logging\SolarWinds.Logging.csproj" />
+  </ItemGroup>
+</Project>
