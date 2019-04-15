@@ -75,7 +75,7 @@ namespace SwqlStudio
                         // grab the most recent folder from the list of user's settings folders, prior to the current version
                         previousSettingsDir = (from dir in currentVersionConfigFileDir.Parent.Parent.EnumerateDirectories("????.????.????.????", SearchOption.AllDirectories)
                                                let dirVer = new { Dir = dir, Ver = new Version(dir.Name) }
-                                               where dirVer.Ver < currentVersion && dir.Parent.Name.ToLower().Contains("swqlstudio")
+                                               where dirVer.Ver < currentVersion && dir.Parent.Name.IndexOf("swqlstudio", StringComparison.OrdinalIgnoreCase) >= 0
                                                orderby dirVer.Ver descending
                                                select dir).FirstOrDefault();
 
