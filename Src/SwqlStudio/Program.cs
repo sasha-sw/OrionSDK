@@ -17,7 +17,7 @@ namespace SwqlStudio
         [STAThread]
         static void Main()
         {
-            SolarWinds.Logging.Log.Configure(string.Empty);
+            //TODO: SolarWinds.Logging.Log.Configure(string.Empty);
 
             AppDomain.CurrentDomain.UnhandledException += CurrentDomainUnhandledException;
             if (Settings.Default.UpdateRequired)

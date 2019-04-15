@@ -6,7 +6,7 @@
     <FileUpgradeFlags />
     <OldToolsVersion>3.5</OldToolsVersion>
     <UpgradeBackupLocation />
-    <TargetFramework>netcoreapp3</TargetFramework>
+    <TargetFramework>netstandard2.0</TargetFramework>
     <IsWebBootstrapper>true</IsWebBootstrapper>
     <PublishUrl>http://localhost/SolarWinds.InformationService.Contract/</PublishUrl>
     <Install>true</Install>
