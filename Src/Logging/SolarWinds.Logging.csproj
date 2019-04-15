@@ -23,7 +23,6 @@
     <BootstrapperEnabled>true</BootstrapperEnabled>
     <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
-    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
     <OutputPath>bin\$(Configuration)\</OutputPath>
     <NoWarn>1570,1571,1572,1573,1587,1591,1710,1711,1712</NoWarn>
     <DocumentationFile>bin\$(Configuration)\SolarWinds.Logging.xml</DocumentationFile>

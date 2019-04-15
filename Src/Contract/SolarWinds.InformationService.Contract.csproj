@@ -23,9 +23,13 @@
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
-    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
     <OutputPath>bin\$(Configuration)\</OutputPath>
   </PropertyGroup>
+  <ItemGroup>
+    <Compile Remove="Tests\**" />
+    <EmbeddedResource Remove="Tests\**" />
+    <None Remove="Tests\**" />
+  </ItemGroup>
   <ItemGroup>
     <Compile Update="InformationServiceClient\InformationServiceCommand.cs">
       <SubType>Component</SubType>
@@ -48,22 +52,10 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Compile Remove="Tests\InformationService.Contract.Tests\EntityCollectionResponseParserTest.cs" />
-    <Compile Remove="Tests\InformationService.Contract.Tests\InformationServiceDataAdapterTest.cs" />
-    <Compile Remove="Tests\InformationService.Contract.Tests\InformationServiceDataReaderTest.cs" />
-    <Compile Remove="Tests\InformationService.Contract.Tests\PropertyBagTest.cs" />
-    <Compile Remove="Tests\InformationService.Contract.Tests\ResponseParserTest.cs" />
-    <Compile Remove="Tests\InformationService.Contract.Tests\MetaData\EntityMetadataTest.cs" />
-    <Compile Remove="Tests\InformationService.Contract.Tests\OldContract\PropertyBag.cs" />
-    <Compile Remove="Tests\InformationService.Contract.Tests\OldContract\XmlStrippedSerializer.cs" />
-    <Compile Remove="Tests\InformationService.Contract.Tests\OldContract\XmlStrippedSerializerCache.cs" />
-    <Compile Remove="Tests\InformationService.Contract.Tests\Properties\AssemblyInfo.cs" />
-    <Compile Remove="Tests\InformationService.Contract.Tests\Properties\Resources.Designer.cs" />
-    <Compile Remove="Tests\InformationService.Contract.Tests\obj\Debug\TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs" />
-    <Compile Remove="Tests\InformationService.Contract.Tests\obj\Debug\TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs" />
-    <Compile Remove="Tests\InformationService.Contract.Tests\obj\Debug\TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs" />
+    <PackageReference Include="System.ServiceModel.NetTcp" Version="4.5.3" />
+    <PackageReference Include="System.ServiceModel.Primitives" Version="4.5.3" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="System.ServiceModel.Primitives" Version="4.5.3" />
+    <ProjectReference Include="..\Logging\SolarWinds.Logging.csproj" />
   </ItemGroup>
 </Project>

@@ -122,7 +122,7 @@ namespace SolarWinds.InformationService.Contract2
 
         private void FixBinding()
         {
-            BindingElementCollection elements = _channelFactory.Endpoint.Binding.CreateBindingElements();
+            /*BindingElementCollection elements = _channelFactory.Endpoint.Binding.CreateBindingElements();
             SslStreamSecurityBindingElement element = elements.Find<SslStreamSecurityBindingElement>();
             if (element != null)
             {
@@ -138,7 +138,7 @@ namespace SolarWinds.InformationService.Contract2
                 newbinding.SendTimeout = binding.SendTimeout;
 
                 _channelFactory.Endpoint.Binding = newbinding;
-            }
+            }*/
         }
 
         private void Initialize(EndpointAddress address, Binding binding, ServiceCredentials credentials)
@@ -157,7 +157,7 @@ namespace SolarWinds.InformationService.Contract2
             SslStreamSecurityBindingElement element = elements.Find<SslStreamSecurityBindingElement>();
             if (element != null)
             {
-                element.IdentityVerifier = new SWIdentityVerifier();
+                //TODO: element.IdentityVerifier = new SWIdentityVerifier();
 
                 CustomBinding newbinding = new CustomBinding(elements);
 

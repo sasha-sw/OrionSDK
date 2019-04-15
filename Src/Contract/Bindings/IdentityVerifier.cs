@@ -1,4 +1,4 @@
-using System.IdentityModel.Policy;
+/*using System.IdentityModel.Policy;
 using System.ServiceModel;
 using System.ServiceModel.Security;
 
@@ -19,3 +19,4 @@ namespace SolarWinds.InformationService.Contract2.Bindings
     }
 
 }
+*/

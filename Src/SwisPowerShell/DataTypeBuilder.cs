@@ -20,10 +20,10 @@ namespace SwisPowerShell
 
         public DataTypeBuilder(string name)
         {
-            var assemblyName = new AssemblyName {Name = name};
-            _moduleBuilder =
-                AppDomain.CurrentDomain.DefineDynamicAssembly(
-                    assemblyName, AssemblyBuilderAccess.Run).DefineDynamicModule(name);
+            var assemblyName = new AssemblyName { Name = name };
+
+            _moduleBuilder = AssemblyBuilder.DefineDynamicAssembly(new AssemblyName(Guid.NewGuid().ToString()),
+                                                                    AssemblyBuilderAccess.Run).DefineDynamicModule(name);
         }
 
         public Type CreateType(IEnumerable<Pair<string, Type>> properties)

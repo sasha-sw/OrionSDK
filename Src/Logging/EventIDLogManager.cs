@@ -176,7 +176,7 @@ namespace SolarWinds.Logging.Ext.EventID
 		}	
 
 		/// <summary>
-		/// Shorthand for <see cref="LogManager.GetLogger(string)"/>.
+		/// Shorthand for LogManager.GetLogger(string)
 		/// </summary>
 		/// <remarks>
 		/// Get the logger for the fully qualified name of the type specified.
@@ -190,7 +190,7 @@ namespace SolarWinds.Logging.Ext.EventID
 		}
 
 		/// <summary>
-		/// Shorthand for <see cref="LogManager.GetLogger(string)"/>.
+		/// Shorthand for LogManager.GetLogger(string)
 		/// </summary>
 		/// <remarks>
 		/// Get the logger for the fully qualified name of the type specified.
@@ -205,7 +205,7 @@ namespace SolarWinds.Logging.Ext.EventID
 		}
 
 		/// <summary>
-		/// Shorthand for <see cref="LogManager.GetLogger(string)"/>.
+		/// Shorthand for LogManager.GetLogger(string)
 		/// </summary>
 		/// <remarks>
 		/// Get the logger for the fully qualified name of the type specified.

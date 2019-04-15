@@ -43,7 +43,7 @@ namespace SolarWinds.Logging
         {
             Environment.SetEnvironmentVariable("SWLogDir", FolderCommonApplicationData, EnvironmentVariableTarget.Process);
 
-            Initialize();
+            //Initialize();
 
             /*
              Handle assembly loading event is disabled because next loaded assembly configuration file 
@@ -58,7 +58,7 @@ namespace SolarWinds.Logging
             */
             // AppDomain.CurrentDomain.AssemblyLoad += CurrentDomain_AssemblyLoad;
         }
-
+        /*
         [MethodImpl(MethodImplOptions.NoInlining)]
         private static void Initialize()
         {
@@ -125,9 +125,9 @@ namespace SolarWinds.Logging
             // Configure log4net within application configuration file
             // For web apps, this will work if the config info is in web.config:
             Configure(AppDomain.CurrentDomain.SetupInformation.ConfigurationFile);
-        }
+        }*/
 
-        static void CurrentDomain_AssemblyLoad(object sender, AssemblyLoadEventArgs args)
+        /*static void CurrentDomain_AssemblyLoad(object sender, AssemblyLoadEventArgs args)
         {
             try
             {
@@ -138,7 +138,7 @@ namespace SolarWinds.Logging
                 // NotSupportedException is raised for dynamic library - access to Location property
                 // Simply ignore exception to allow normal behaviour for the caller
             }
-        }
+        }*/
 
 		[MethodImpl(MethodImplOptions.NoInlining)]
 		public Log() : this(GetCallerMethod())
@@ -200,7 +200,7 @@ namespace SolarWinds.Logging
         {
             return new StackFrame(2, false).GetMethod();
         }
-
+        /*
         public static void Configure(string configFile = null)
         {
             foreach (string fn in EnumFile(configFile))
@@ -236,7 +236,7 @@ namespace SolarWinds.Logging
                 }
             }
         }
-
+        
         [MethodImpl(MethodImplOptions.NoInlining)]
         private static IEnumerable<string> EnumFile(string fileName)
         {
@@ -263,7 +263,7 @@ namespace SolarWinds.Logging
             }
 
             yield return AppDomain.CurrentDomain.SetupInformation.ConfigurationFile;
-        }
+        }*/
         
         #region Log Forwarding Members
 

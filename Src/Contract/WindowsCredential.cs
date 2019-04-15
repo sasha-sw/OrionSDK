@@ -112,8 +112,8 @@ namespace SolarWinds.InformationService.Contract2
                 if (String.IsNullOrEmpty(host) || host.Equals("localhost", StringComparison.OrdinalIgnoreCase))
                     host = Environment.MachineName;
 
-                channelFactory.Endpoint.Address = new EndpointAddress(channelFactory.Endpoint.Address.Uri,
-                                                                      EndpointIdentity.CreateSpnIdentity("HOST/" + host));
+                channelFactory.Endpoint.Address = new EndpointAddress(channelFactory.Endpoint.Address.Uri/*, TODO
+                                                                      EndpointIdentity.CreateSpnIdentity("HOST/" + host)*/);
             }
 
             if (!String.IsNullOrEmpty(Username))
@@ -129,7 +129,7 @@ namespace SolarWinds.InformationService.Contract2
 
             X509ChainPolicy chainPolicy = new X509ChainPolicy();
             chainPolicy.VerificationFlags = X509VerificationFlags.AllowUnknownCertificateAuthority | X509VerificationFlags.IgnoreNotTimeValid;
-            channelFactory.Credentials.ServiceCertificate.Authentication.CustomCertificateValidator = X509CertificateValidator.CreateChainTrustValidator(true, chainPolicy);
+            //TODO:channelFactory.Credentials.ServiceCertificate.Authentication.CustomCertificateValidator = X509CertificateValidator.CreateChainTrustValidator(true, chainPolicy);
         }
 
         public string GetPassword()

@@ -3,15 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.28803.156
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SolarWinds.InformationService.Contract", "Contract\SolarWinds.InformationService.Contract.csproj", "{7AB6A2C2-AD8F-40AF-9527-B12EB4B78B0A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SolarWinds.InformationService.Contract", "Contract\SolarWinds.InformationService.Contract.csproj", "{7AB6A2C2-AD8F-40AF-9527-B12EB4B78B0A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SwisPowerShell", "SwisPowerShell\SwisPowerShell.csproj", "{CEBB636F-B1BC-4C1D-847C-B059532B4699}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SwqlStudio", "SwqlStudio\SwqlStudio.csproj", "{B4F89558-AE9F-4704-B210-6949EF8DD65B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SwisPowerShell", "SwisPowerShell\SwisPowerShell.csproj", "{CEBB636F-B1BC-4C1D-847C-B059532B4699}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InformationService.Contract.Tests", "Contract\Tests\InformationService.Contract.Tests\InformationService.Contract.Tests.csproj", "{C4202EEB-7DD5-4FF3-A1F7-047F163C3D23}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SwisPowerShell.Tests", "..\Test\SwisPowerShell.Tests\SwisPowerShell.Tests.csproj", "{164BEA87-FC26-4588-99AA-2F47174AE368}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SolarWinds.Logging", "Logging\SolarWinds.Logging.csproj", "{7B3279F9-8A8C-47FD-83EA-15390AEA5F87}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -43,16 +43,6 @@ Global
 		{CEBB636F-B1BC-4C1D-847C-B059532B4699}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{CEBB636F-B1BC-4C1D-847C-B059532B4699}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{CEBB636F-B1BC-4C1D-847C-B059532B4699}.Release|x86.ActiveCfg = Release|Any CPU
-		{B4F89558-AE9F-4704-B210-6949EF8DD65B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{B4F89558-AE9F-4704-B210-6949EF8DD65B}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{B4F89558-AE9F-4704-B210-6949EF8DD65B}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
-		{B4F89558-AE9F-4704-B210-6949EF8DD65B}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
-		{B4F89558-AE9F-4704-B210-6949EF8DD65B}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{B4F89558-AE9F-4704-B210-6949EF8DD65B}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{B4F89558-AE9F-4704-B210-6949EF8DD65B}.Release|Any CPU.Build.0 = Release|Any CPU
-		{B4F89558-AE9F-4704-B210-6949EF8DD65B}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
-		{B4F89558-AE9F-4704-B210-6949EF8DD65B}.Release|Mixed Platforms.Build.0 = Release|Any CPU
-		{B4F89558-AE9F-4704-B210-6949EF8DD65B}.Release|x86.ActiveCfg = Release|Any CPU
 		{C4202EEB-7DD5-4FF3-A1F7-047F163C3D23}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{C4202EEB-7DD5-4FF3-A1F7-047F163C3D23}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C4202EEB-7DD5-4FF3-A1F7-047F163C3D23}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
@@ -75,6 +65,18 @@ Global
 		{164BEA87-FC26-4588-99AA-2F47174AE368}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{164BEA87-FC26-4588-99AA-2F47174AE368}.Release|x86.ActiveCfg = Release|Any CPU
 		{164BEA87-FC26-4588-99AA-2F47174AE368}.Release|x86.Build.0 = Release|Any CPU
+		{7B3279F9-8A8C-47FD-83EA-15390AEA5F87}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7B3279F9-8A8C-47FD-83EA-15390AEA5F87}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7B3279F9-8A8C-47FD-83EA-15390AEA5F87}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{7B3279F9-8A8C-47FD-83EA-15390AEA5F87}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{7B3279F9-8A8C-47FD-83EA-15390AEA5F87}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{7B3279F9-8A8C-47FD-83EA-15390AEA5F87}.Debug|x86.Build.0 = Debug|Any CPU
+		{7B3279F9-8A8C-47FD-83EA-15390AEA5F87}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7B3279F9-8A8C-47FD-83EA-15390AEA5F87}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7B3279F9-8A8C-47FD-83EA-15390AEA5F87}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{7B3279F9-8A8C-47FD-83EA-15390AEA5F87}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{7B3279F9-8A8C-47FD-83EA-15390AEA5F87}.Release|x86.ActiveCfg = Release|Any CPU
+		{7B3279F9-8A8C-47FD-83EA-15390AEA5F87}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

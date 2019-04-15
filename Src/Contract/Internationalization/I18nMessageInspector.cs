@@ -5,7 +5,7 @@ using System.Threading;
 
 namespace SolarWinds.InformationService.Contract2.Internationalization
 {
-    class I18nMessageInspector : IClientMessageInspector, IDispatchMessageInspector
+    class I18nMessageInspector : IClientMessageInspector//TODO:, IDispatchMessageInspector
     {
         public object BeforeSendRequest(ref Message request, IClientChannel channel)
         {
@@ -19,11 +19,11 @@ namespace SolarWinds.InformationService.Contract2.Internationalization
         {
         }
 
-        public object AfterReceiveRequest(ref Message request, IClientChannel channel, InstanceContext instanceContext)
+        /*public object AfterReceiveRequest(ref Message request, IClientChannel channel, InstanceContext instanceContext)
         {
             // Don't actually need to do anything on the server side. This header is dealt with by the IAuthorizationPolicy.
             return null;
-        }
+        }*/
 
         public void BeforeSendReply(ref Message reply, object correlationState)
         {

@@ -1,9 +1,9 @@
-﻿using System;
+﻿using SolarWinds.Logging;
+using System;
 using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.ServiceModel.Channels;
 using System.Xml;
-using SolarWinds.Logging;
 
 namespace SolarWinds.InformationService.Contract2
 {

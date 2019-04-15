@@ -116,7 +116,7 @@ namespace SolarWinds.InformationService.Contract2
 
         private void FixBinding()
         {
-            BindingElementCollection elements = _channelFactory.Endpoint.Binding.CreateBindingElements();
+            /*BindingElementCollection elements = _channelFactory.Endpoint.Binding.CreateBindingElements();
             SslStreamSecurityBindingElement element = elements.Find<SslStreamSecurityBindingElement>();
             if (element != null)
             {
@@ -134,7 +134,7 @@ namespace SolarWinds.InformationService.Contract2
                 _channelFactory.Endpoint.Binding = newbinding;
             }
 
-            CorrectChannelFactory();
+            CorrectChannelFactory();*/
         }
 
         private void Initialize(EndpointAddress address, Binding binding, ServiceCredentials credentials)
@@ -150,7 +150,7 @@ namespace SolarWinds.InformationService.Contract2
 
 
             BindingElementCollection elements = binding.CreateBindingElements();
-            SslStreamSecurityBindingElement element = elements.Find<SslStreamSecurityBindingElement>();
+            /*SslStreamSecurityBindingElement element = elements.Find<SslStreamSecurityBindingElement>();
             if (element != null)
             {
                 element.IdentityVerifier = new SWIdentityVerifier();
@@ -163,7 +163,7 @@ namespace SolarWinds.InformationService.Contract2
                 newbinding.ReceiveTimeout = binding.ReceiveTimeout;
                 newbinding.SendTimeout = binding.SendTimeout;
                 binding = newbinding;
-            }
+            }*/
 
             _channelFactory = CreateChannelFactory(binding, address);
             credentials.ApplyTo(_channelFactory);
@@ -175,9 +175,9 @@ namespace SolarWinds.InformationService.Contract2
         {
             // ???: how can I detect that channel binding is securited            
 
-            _activityMonitor = new InfoServiceActivityMonitor();
+            /*_activityMonitor = new InfoServiceActivityMonitor();
             _channelFactory.Endpoint.Behaviors.Add(new InfoServiceDefaultBehaviour());
-            _channelFactory.Endpoint.Behaviors.Add(_activityMonitor);
+            _channelFactory.Endpoint.Behaviors.Add(_activityMonitor);*/
         }
 
         #region IInfoService Members
