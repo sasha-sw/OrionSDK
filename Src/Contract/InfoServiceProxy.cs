@@ -120,8 +120,9 @@ namespace SolarWinds.InformationService.Contract2
             SslStreamSecurityBindingElement element = elements.Find<SslStreamSecurityBindingElement>();
             if (element != null)
             {
+#if !NETSTANDARD
                 element.IdentityVerifier = new SWIdentityVerifier();
-
+#endif
                 CustomBinding newbinding = new CustomBinding(elements);
 
                 // Transfer timeout settings from the old binding to the new
@@ -134,7 +135,9 @@ namespace SolarWinds.InformationService.Contract2
                 _channelFactory.Endpoint.Binding = newbinding;
             }
 
+#if !NETSTANDARD
             CorrectChannelFactory();
+#endif
         }
 
         private void Initialize(EndpointAddress address, Binding binding, ServiceCredentials credentials)
@@ -153,8 +156,9 @@ namespace SolarWinds.InformationService.Contract2
             SslStreamSecurityBindingElement element = elements.Find<SslStreamSecurityBindingElement>();
             if (element != null)
             {
+#if !NETSTANDARD
                 element.IdentityVerifier = new SWIdentityVerifier();
-
+#endif
                 CustomBinding newbinding = new CustomBinding(elements);
 
                 // Transfer timeout settings from the old binding to the new
@@ -168,9 +172,12 @@ namespace SolarWinds.InformationService.Contract2
             _channelFactory = CreateChannelFactory(binding, address);
             credentials.ApplyTo(_channelFactory);
 
+#if !NETSTANDARD
             CorrectChannelFactory();
+#endif
         }
 
+#if !NETSTANDARD
         private void CorrectChannelFactory()
         {
             // ???: how can I detect that channel binding is securited            
@@ -179,8 +186,9 @@ namespace SolarWinds.InformationService.Contract2
             _channelFactory.Endpoint.Behaviors.Add(new InfoServiceDefaultBehaviour());
             _channelFactory.Endpoint.Behaviors.Add(_activityMonitor);
         }
+#endif
 
-        #region IInfoService Members
+#region IInfoService Members
 
         public virtual XmlElement Invoke(string entity, string verb, params XmlElement[] parameters)
         {
@@ -412,9 +420,9 @@ namespace SolarWinds.InformationService.Contract2
             }
         }
 
-        #endregion
+#endregion
 
-        #region IStreamedInfoService Members
+#region IStreamedInfoService Members
 
         public VerbInvokeResponse StreamedInvoke(VerbInvokeArguments parameter)
         {
@@ -443,7 +451,7 @@ namespace SolarWinds.InformationService.Contract2
             }
         }
 
-        #endregion
+#endregion
 
         public void Open()
         {
@@ -503,7 +511,7 @@ namespace SolarWinds.InformationService.Contract2
             _infoService = null;
         }
 
-        #region Create Channel Factory
+#region Create Channel Factory
 
         private static ChannelFactory<IStreamInformationServiceChannel> CreateChannelFactory(Binding binding, EndpointAddress address)
         {
@@ -529,7 +537,7 @@ namespace SolarWinds.InformationService.Contract2
             return new ChannelFactory<IStreamInformationServiceChannel>(endpointConfiguration, remoteAddress);
         }
 
-        #endregion
+#endregion
 
         private void ValidateUsedConnection()
         {
@@ -556,7 +564,7 @@ namespace SolarWinds.InformationService.Contract2
             catch { }
         }
 
-        #region IDisposable Members
+#region IDisposable Members
 
         protected virtual void Dispose(bool disposing)
         {
@@ -590,6 +598,6 @@ namespace SolarWinds.InformationService.Contract2
             Dispose(false);
         }
 
-        #endregion
+#endregion
     }
 }

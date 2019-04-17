@@ -6,7 +6,7 @@
     <FileUpgradeFlags />
     <OldToolsVersion>3.5</OldToolsVersion>
     <UpgradeBackupLocation />
-    <TargetFramework>netstandard2.0</TargetFramework>
+    <TargetFrameworks>net472;netstandard2.0</TargetFrameworks>
     <IsWebBootstrapper>true</IsWebBootstrapper>
     <PublishUrl>http://localhost/SolarWinds.InformationService.Contract/</PublishUrl>
     <Install>true</Install>
@@ -50,6 +50,9 @@
     <None Include="PropertyBag.xsd">
       <SubType>Designer</SubType>
     </None>
+  </ItemGroup>
+  <ItemGroup Condition=" '$(TargetFramework)' == 'net472' ">
+    <Reference Include="System.Configuration" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="System.ServiceModel.NetTcp" Version="4.5.3" />

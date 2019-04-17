@@ -122,11 +122,13 @@ namespace SolarWinds.Logging
                 // unable to set up log4net properties
             }
 
+#if !NETSTANDARD
             // Configure log4net within application configuration file
             // For web apps, this will work if the config info is in web.config:
             Configure(AppDomain.CurrentDomain.SetupInformation.ConfigurationFile);
+#endif
         }
-
+#if !NETSTANDARD
         static void CurrentDomain_AssemblyLoad(object sender, AssemblyLoadEventArgs args)
         {
             try
@@ -139,6 +141,7 @@ namespace SolarWinds.Logging
                 // Simply ignore exception to allow normal behaviour for the caller
             }
         }
+#endif
 
 		[MethodImpl(MethodImplOptions.NoInlining)]
 		public Log() : this(GetCallerMethod())
@@ -201,6 +204,8 @@ namespace SolarWinds.Logging
             return new StackFrame(2, false).GetMethod();
         }
 
+#if !NETSTANDARD
+        
         public static void Configure(string configFile = null)
         {
             foreach (string fn in EnumFile(configFile))
@@ -226,7 +231,7 @@ namespace SolarWinds.Logging
                             {
                                 if (!_configurations.Contains(fi.FullName))
                                 {
-                                    log4net.Config.XmlConfigurator.ConfigureAndWatch(fi);
+                                    log4net.Config.XmlConfigurator.ConfigureAndWatch(null, fi);
                                     _configurations.Add(fi.FullName);
                                 }
                             }
@@ -264,8 +269,9 @@ namespace SolarWinds.Logging
 
             yield return AppDomain.CurrentDomain.SetupInformation.ConfigurationFile;
         }
+#endif
         
-        #region Log Forwarding Members
+#region Log Forwarding Members
 
         public void Debug(object message)
         {
@@ -604,7 +610,7 @@ namespace SolarWinds.Logging
 			return new LogBlock(this, blockName);
 		}
 
-        #endregion
+#endregion
     }
 
 	class LogBlock : IDisposable
@@ -621,7 +627,7 @@ namespace SolarWinds.Logging
             _log.DebugFormat("{{ {0} entered", _blockName);
 		}
 
-		#region IDisposable Members
+#region IDisposable Members
 
 		public void Dispose()
 		{
@@ -634,6 +640,6 @@ namespace SolarWinds.Logging
 			//GC.SuppressFinalize(this); // no finalizer on this object, so SuppressFinalize is not needed
 		}
 
-		#endregion
+#endregion
 	}
 }

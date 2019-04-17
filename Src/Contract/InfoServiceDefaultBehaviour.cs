@@ -1,4 +1,5 @@
-﻿using System;
+﻿#if !NETSTANDARD
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.ServiceModel.Channels;
@@ -35,9 +36,9 @@ namespace SolarWinds.InformationService.Contract2
         {
         }
 
-        #endregion
+#endregion
 
-        #region IClientMessageInspector Members
+#region IClientMessageInspector Members
 
         public void AfterReceiveReply(ref System.ServiceModel.Channels.Message reply, object correlationState)
         {
@@ -56,6 +57,7 @@ namespace SolarWinds.InformationService.Contract2
             return null;
         }
 
-        #endregion
+#endregion
     }
 }
+#endif

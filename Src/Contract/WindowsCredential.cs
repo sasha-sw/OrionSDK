@@ -112,8 +112,12 @@ namespace SolarWinds.InformationService.Contract2
                 if (String.IsNullOrEmpty(host) || host.Equals("localhost", StringComparison.OrdinalIgnoreCase))
                     host = Environment.MachineName;
 
-                channelFactory.Endpoint.Address = new EndpointAddress(channelFactory.Endpoint.Address.Uri,
-                                                                      EndpointIdentity.CreateSpnIdentity("HOST/" + host));
+                channelFactory.Endpoint.Address = new EndpointAddress(channelFactory.Endpoint.Address.Uri
+#if !NETSTANDARD
+
+                                                                      , EndpointIdentity.CreateSpnIdentity("HOST/" + host)
+#endif
+                                                                      );
             }
 
             if (!String.IsNullOrEmpty(Username))
@@ -125,11 +129,15 @@ namespace SolarWinds.InformationService.Contract2
                 channelFactory.Credentials.Windows.ClientCredential.Password = GetPassword();
 
             channelFactory.Credentials.Windows.AllowedImpersonationLevel = _tokenImpersonationLevel;
+#if NETSTANDARD
+            channelFactory.Credentials.ServiceCertificate.Authentication.CertificateValidationMode = X509CertificateValidationMode.None;
+#else
             channelFactory.Credentials.ServiceCertificate.Authentication.CertificateValidationMode = X509CertificateValidationMode.Custom;
 
             X509ChainPolicy chainPolicy = new X509ChainPolicy();
             chainPolicy.VerificationFlags = X509VerificationFlags.AllowUnknownCertificateAuthority | X509VerificationFlags.IgnoreNotTimeValid;
             channelFactory.Credentials.ServiceCertificate.Authentication.CustomCertificateValidator = X509CertificateValidator.CreateChainTrustValidator(true, chainPolicy);
+#endif
         }
 
         public string GetPassword()

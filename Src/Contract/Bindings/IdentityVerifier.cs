@@ -1,4 +1,5 @@
-/*using System.IdentityModel.Policy;
+#if !NETSTANDARD
+using System.IdentityModel.Policy;
 using System.ServiceModel;
 using System.ServiceModel.Security;
 
@@ -19,4 +20,4 @@ namespace SolarWinds.InformationService.Contract2.Bindings
     }
 
 }
-*/
+#endif

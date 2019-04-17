@@ -25,7 +25,9 @@ namespace SolarWinds.InformationService.Contract2
 
         void IEndpointBehavior.ApplyClientBehavior(ServiceEndpoint endpoint, ClientRuntime clientRuntime)
         {
+#if !NETSTANDARD
             clientRuntime.MessageInspectors.Add(this);
+#endif
         }
 
         void IEndpointBehavior.ApplyDispatchBehavior(ServiceEndpoint endpoint, EndpointDispatcher endpointDispatcher)
@@ -37,9 +39,9 @@ namespace SolarWinds.InformationService.Contract2
         {
         }
 
-        #endregion
+#endregion
 
-        #region IClientMessageInspector Members
+#region IClientMessageInspector Members
 
         public void AfterReceiveReply(ref System.ServiceModel.Channels.Message reply, object correlationState)
         {
@@ -52,6 +54,6 @@ namespace SolarWinds.InformationService.Contract2
             return null;
         }
 
-        #endregion
+#endregion
     }
 }

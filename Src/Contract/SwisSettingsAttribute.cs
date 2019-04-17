@@ -1,4 +1,5 @@
-﻿using System;
+﻿#if !NETSTANDARD
+using System;
 using System.ServiceModel.Channels;
 using System.ServiceModel.Description;
 using System.ServiceModel.Dispatcher;
@@ -32,3 +33,4 @@ namespace SolarWinds.InformationService.Contract2
         }
     }
 }
+#endif

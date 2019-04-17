@@ -126,8 +126,9 @@ namespace SolarWinds.InformationService.Contract2
             SslStreamSecurityBindingElement element = elements.Find<SslStreamSecurityBindingElement>();
             if (element != null)
             {
+#if !NETSTANDARD
                 element.IdentityVerifier = new SWIdentityVerifier();
-
+#endif
                 CustomBinding newbinding = new CustomBinding(elements);
 
                 // Transfer timeout settings from the old binding to the new
@@ -157,8 +158,9 @@ namespace SolarWinds.InformationService.Contract2
             SslStreamSecurityBindingElement element = elements.Find<SslStreamSecurityBindingElement>();
             if (element != null)
             {
+#if !NETSTANDARD
                 element.IdentityVerifier = new SWIdentityVerifier();
-
+#endif
                 CustomBinding newbinding = new CustomBinding(elements);
 
                 // Transfer timeout settings from the old binding to the new
@@ -251,7 +253,7 @@ namespace SolarWinds.InformationService.Contract2
             return factory;
         }
 
-        #region IDisposable Members
+#region IDisposable Members
 
         protected virtual void Dispose(bool disposing)
         {
@@ -285,6 +287,6 @@ namespace SolarWinds.InformationService.Contract2
             Dispose(false);
         }
 
-        #endregion
+#endregion
     }
 }
