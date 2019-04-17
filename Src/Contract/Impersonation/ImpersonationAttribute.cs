@@ -13,12 +13,12 @@ namespace SolarWinds.InformationService.Contract2.Impersonation
 
         public void ApplyClientBehavior(ContractDescription contractDescription, ServiceEndpoint endpoint, ClientRuntime clientRuntime)
         {
-            //TODO:clientRuntime.MessageInspectors.Add(new ImpersonationMessageInspector());
+            clientRuntime.MessageInspectors.Add(new ImpersonationMessageInspector());
         }
 
         public void ApplyDispatchBehavior(ContractDescription contractDescription, ServiceEndpoint endpoint, DispatchRuntime dispatchRuntime)
         {
-            //TODO:dispatchRuntime.MessageInspectors.Add(new ImpersonationMessageInspector());
+            dispatchRuntime.MessageInspectors.Add(new ImpersonationMessageInspector());
         }
 
         public void Validate(ContractDescription contractDescription, ServiceEndpoint endpoint)

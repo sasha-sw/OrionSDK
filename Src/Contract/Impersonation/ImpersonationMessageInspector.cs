@@ -4,7 +4,7 @@ using System.ServiceModel.Dispatcher;
 
 namespace SolarWinds.InformationService.Contract2.Impersonation
 {
-    class ImpersonationMessageInspector : IClientMessageInspector//TODO:, IDispatchMessageInspector
+    class ImpersonationMessageInspector : IClientMessageInspector, IDispatchMessageInspector
     {
         public object BeforeSendRequest(ref Message request, IClientChannel channel)
         {
@@ -22,11 +22,11 @@ namespace SolarWinds.InformationService.Contract2.Impersonation
         {
         }
 
-        /*public object AfterReceiveRequest(ref Message request, IClientChannel channel, InstanceContext instanceContext)
+        public object AfterReceiveRequest(ref Message request, IClientChannel channel, InstanceContext instanceContext)
         {
             // Don't actually need to do anything on the server side. This header is dealt with by the IAuthorizationPolicy.
             return null;
-        }*/
+        }
 
         public void BeforeSendReply(ref Message reply, object correlationState)
         {

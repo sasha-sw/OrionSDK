@@ -25,7 +25,7 @@ namespace SolarWinds.InformationService.Contract2
 
         void IEndpointBehavior.ApplyClientBehavior(ServiceEndpoint endpoint, ClientRuntime clientRuntime)
         {
-            //TODO: clientRuntime.MessageInspectors.Add(this);
+            clientRuntime.MessageInspectors.Add(this);
         }
 
         void IEndpointBehavior.ApplyDispatchBehavior(ServiceEndpoint endpoint, EndpointDispatcher endpointDispatcher)

@@ -17,7 +17,7 @@ namespace SwqlStudio
         [STAThread]
         static void Main()
         {
-            //TODO: SolarWinds.Logging.Log.Configure(string.Empty);
+            SolarWinds.Logging.Log.Configure(string.Empty);
 
             AppDomain.CurrentDomain.UnhandledException += CurrentDomainUnhandledException;
             if (Settings.Default.UpdateRequired)
@@ -75,7 +75,7 @@ namespace SwqlStudio
                         // grab the most recent folder from the list of user's settings folders, prior to the current version
                         previousSettingsDir = (from dir in currentVersionConfigFileDir.Parent.Parent.EnumerateDirectories("????.????.????.????", SearchOption.AllDirectories)
                                                let dirVer = new { Dir = dir, Ver = new Version(dir.Name) }
-                                               where dirVer.Ver < currentVersion && dir.Parent.Name.IndexOf("swqlstudio", StringComparison.OrdinalIgnoreCase) >= 0
+                                               where dirVer.Ver < currentVersion && dir.Parent.Name.ToLower().Contains("swqlstudio")
                                                orderby dirVer.Ver descending
                                                select dir).FirstOrDefault();
 

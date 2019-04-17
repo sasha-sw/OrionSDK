@@ -136,9 +136,9 @@ namespace SwisPowerShell
 
         private static InfoServiceProxy ConnectSoap12(Uri address, string username, string password)
         {
-            var binding = new NetHttpBinding(BasicHttpSecurityMode.Transport);
+            var binding = new WSHttpBinding(SecurityMode.Transport);
             binding.Security.Transport.ClientCredentialType = HttpClientCredentialType.Basic;
-            //TODO: binding.Security.Message.ClientCredentialType = MessageCredentialType.UserName;
+            binding.Security.Message.ClientCredentialType = MessageCredentialType.UserName;
             binding.ReaderQuotas.MaxDepth = 32;
             binding.ReaderQuotas.MaxStringContentLength = int.MaxValue;
             binding.ReaderQuotas.MaxArrayLength = int.MaxValue;
@@ -179,7 +179,7 @@ namespace SwisPowerShell
                 if (Streamed.IsPresent)
                 {
                     binding.TransferMode = TransferMode.Streamed;
-                    //TODO: binding.PortSharingEnabled = true;
+                    binding.PortSharingEnabled = true;
                     binding.ReceiveTimeout = new TimeSpan(15,0,0);
                     binding.SendTimeout = new TimeSpan(15, 0, 0);
                 }
