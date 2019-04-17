@@ -19,7 +19,6 @@
     <SccLocalPath>
     </SccLocalPath>
     <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
-    <RestorePackages>true</RestorePackages>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
     <OutputPath>..\..\bin\$(Configuration)\</OutputPath>
@@ -52,12 +51,15 @@
     </WixExtension>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="WiX.Toolset.DummyFile.txt">
+      <Paket>True</Paket>
+    </Content>
     <Content Include="AddRemovePrograms.wxi" />
     <Content Include="GlobalVariables.wxi" />
-    <Content Include="packages.config" />
+    <Content Include="paket.references" />
   </ItemGroup>
   <PropertyGroup>
-    <WixToolPath>$(SolutionDir)packages\WiX.Toolset.3.9.1006.0\tools\wix\</WixToolPath>
+    <WixToolPath>$(SolutionDir)packages\WiX.Toolset\tools\wix\</WixToolPath>
     <WixTargetsPath>$(WixToolPath)wix.targets</WixTargetsPath>
     <WixTasksPath>$(WixToolPath)WixTasks.dll</WixTasksPath>
   </PropertyGroup>

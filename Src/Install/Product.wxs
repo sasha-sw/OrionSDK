@@ -9,7 +9,7 @@
   <?define InstallUtilExe32 = "[WindowsFolder]\Microsoft.NET\Framework\v4.0.30319\InstallUtil.exe" ?>
   <?define InstallUtilExe64 = "[WindowsFolder]\Microsoft.NET\Framework64\v4.0.30319\InstallUtil.exe" ?>
   <?define TempDir = "[TempFolder]" ?>
-  <?define OutputDir = "..\..\bin\Release" ?>
+  <?define OutputDir = "..\..\bin\Release\net472" ?>
 
   <?define BuildNumber = "$(var.ProductVersion_Major).$(var.ProductVersion_Minor).$(var.ProductVersion_Release).$(var.ProductVersion_Build)" ?>
 
